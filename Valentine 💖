@@ -1,0 +1,1389 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Will You Be My Valentine 💖</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><style>
+  
+body{
+  
+  margin:0;
+  
+  font-family:Poppins, sans-serif;
+  
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  
+  display:flex;
+  
+  justify-content:center;
+  
+  align-items:center;
+  
+  min-height:100vh;
+  
+  overflow:auto;
+  
+}
+  
+
+  
+/* Floating romantic background */
+  
+.love{
+  
+  position:absolute;
+  
+  font-size:22px;
+  
+  opacity:0.28;
+  
+  animation: float 18s linear infinite;
+  
+  white-space:nowrap;
+  
+}
+  
+@keyframes float{
+  
+  from{transform:translateY(110vh)}
+  
+  to{transform:translateY(-120vh)}
+  
+}
+  
+
+  
+.card{
+  
+  background:white;
+  
+  width:92%;
+  
+  max-width:420px;
+  
+  padding:25px;
+  
+  border-radius:24px;
+  
+  text-align:center;
+  
+  box-shadow:0 30px 60px rgba(0,0,0,0.3);
+  
+  position:relative;
+  
+  z-index:10;
+  
+}
+  
+
+  
+h1,h2{color:#ff4d6d}
+  
+
+  
+input{
+  
+  width:100%;
+  
+  padding:12px;
+  
+  margin:12px 0;
+  
+  border-radius:12px;
+  
+  border:1px solid #ccc;
+  
+}
+  
+
+  
+button{
+  
+  width:100%;
+  
+  padding:12px;
+  
+  margin-top:12px;
+  
+  border:none;
+  
+  border-radius:30px;
+  
+  font-size:16px;
+  
+  background:#ff4d6d;
+  
+  color:white;
+  
+  cursor:pointer;
+  
+}
+  
+
+  
+.option{
+  
+  background:#ffe6eb;
+  
+  color:#333;
+  
+}
+  
+
+  
+.hidden{display:none}
+  
+
+  
+.buttons{position:relative;height:90px}
+  
+#yes{position:absolute;left:20px;width:120px}
+  
+#no{
+  
+  position:absolute;
+  
+  right:20px;
+  
+  width:120px;
+  
+  background:#ddd;
+  
+  color:#333;
+  
+}
+  
+
+  
+/* 💌 Envelope Animation */
+  
+#envelope{
+  
+  width:180px;
+  
+  height:120px;
+  
+  position:relative;
+  
+}
+  
+
+  
+#envBody{
+  
+  width:100%;
+  
+  height:100%;
+  
+  background:#ffdde5;
+  
+  border-radius:0 0 12px 12px;
+  
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  
+}
+  
+
+  
+#envFlap{
+  
+  position:absolute;
+  
+  top:0;
+  
+  left:0;
+  
+  width:100%;
+  
+  height:100%;
+  
+  background:#ffb6c9;
+  
+  clip-path:polygon(0 0,100% 0,50% 60%);
+  
+  transform-origin:top;
+  
+  transition:transform 1s ease;
+  
+}
+  
+
+  
+#envelope.open #envFlap{
+  
+  transform:rotateX(180deg);
+  
+}
+  
+
+  
+/* Letter reveal */
+  
+#loveLetter{
+  
+  display:none;
+  
+  animation:letterSlide 1.2s ease forwards;
+  
+}
+  
+
+  
+@keyframes letterSlide{
+  
+  from{opacity:0; transform:translateY(30px)}
+  
+  to{opacity:1; transform:translateY(0)}
+  
+}
+  
+
+  
+/* 💌 Romantic Envelope */
+  
+#envelope{
+  
+  width:220px;
+  
+  height:140px;
+  
+  margin:25px auto;
+  
+  position:relative;
+  
+  cursor:pointer;
+  
+}
+  
+
+  
+/* Envelope body */
+  
+.env-back{
+  
+  position:absolute;
+  
+  width:100%;
+  
+  height:100%;
+  
+  background:#ffe0e9;
+  
+  border-radius:12px;
+  
+  box-shadow:0 15px 30px rgba(0,0,0,0.25);
+  
+}
+  
+
+  
+/* Envelope front flap */
+  
+.env-front{
+  
+  position:absolute;
+  
+  top:0;
+  
+  left:0;
+  
+  width:100%;
+  
+  height:100%;
+  
+  background:#ffb6c9;
+  
+  clip-path:polygon(0 0,100% 0,50% 60%);
+  
+  transform-origin:top;
+  
+  transition:transform 1s ease;
+  
+}
+  
+
+  
+/* Open animation */
+  
+#envelope.open .env-front{
+  
+  transform:rotateX(180deg);
+  
+}
+  
+
+  
+/* 💖 Heart Seal */
+  
+.heart-seal{
+  
+  position:absolute;
+  
+  top:50%;
+  
+  left:50%;
+  
+  transform:translate(-50%,-50%);
+  
+  width:80px;
+  
+  height:80px;
+  
+  background:#ff4d6d;
+  
+  clip-path:polygon(
+  
+    50% 15%,
+  
+    61% 5%,
+  
+    75% 5%,
+  
+    90% 20%,
+  
+    90% 40%,
+  
+    50% 80%,
+  
+    10% 40%,
+  
+    10% 20%,
+  
+    25% 5%,
+  
+    39% 5%
+  
+  );
+  
+  display:flex;
+  
+  align-items:center;
+  
+  justify-content:center;
+  
+  color:white;
+  
+  font-size:15px;
+  
+  font-family:'Great Vibes', cursive;
+  
+  font-weight:normal;
+  
+  text-align:center;
+  
+  animation:pulse 1.4s infinite;
+  
+  box-shadow:0 0 15px rgba(255,77,109,0.7);
+  
+}
+  
+
+  
+/* Pulse animation */
+  
+@keyframes pulse{
+  
+  0%{transform:translate(-50%,-50%) scale(1)}
+  
+  50%{transform:translate(-50%,-50%) scale(1.08)}
+  
+  100%{transform:translate(-50%,-50%) scale(1)}
+  
+}
+  
+
+  
+/* Hide envelope after open */
+  
+#envelope.open{
+  
+  pointer-events:none;
+  
+}
+  
+
+  
+/* Letter reveal */
+  
+#loveLetter{
+  
+  display:none;
+  
+  animation:letterSlide 1.2s ease forwards;
+  
+}
+  
+
+  
+@keyframes letterSlide{
+  
+  from{opacity:0; transform:translateY(30px)}
+  
+  to{opacity:1; transform:translateY(0)}
+  
+}
+  
+
+  
+/* 🐱 Mochi Cat Stickers */
+  
+.mochi{
+  
+  position:absolute;
+  
+  width:70px;
+  
+  opacity:0.25;
+  
+  animation: mochiFloat 22s linear infinite;
+  
+  pointer-events:none;
+  
+}
+  
+
+  
+@keyframes mochiFloat{
+  
+  from{
+  
+    transform:translateY(110vh) rotate(0deg);
+  
+  }
+  
+  to{
+  
+    transform:translateY(-130vh) rotate(360deg);
+  
+  }
+  
+}
+  
+
+  
+/* 🐱 Mochi Cat Stickers */
+  
+.mochi{
+  
+  position:absolute;
+  
+  width:70px;
+  
+  opacity:0.25;
+  
+  animation: mochiFloat 22s linear infinite;
+  
+  pointer-events:none;
+  
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  
+}
+  
+
+  
+@keyframes mochiFloat{
+  
+  from{
+  
+    transform:translateY(110vh) rotate(0deg);
+  
+  }
+  
+  to{
+  
+    transform:translateY(-130vh) rotate(360deg);
+  
+  }
+  
+}
+  
+
+  
+/* Fade mochi away */
+  
+.mochi.fade{
+  
+  opacity:0;
+  
+  transform:scale(0.8);
+  
+}
+  
+
+  
+/* 💖 Mochi heart rain */
+  
+.mochi-heart{
+  
+  position:absolute;
+  
+  font-size:26px;
+  
+  animation: heartFall 4s linear forwards;
+  
+  pointer-events:none;
+  
+}
+  
+
+  
+@keyframes heartFall{
+  
+  from{transform:translateY(-10vh); opacity:1}
+  
+  to{transform:translateY(110vh); opacity:0}
+  
+}
+  
+
+  
+
+  
+</style></head><body><!-- BACKGROUND MUSIC --><audio id="music" loop>  <source src="https://cdn.pixabay.com/audio/2023/02/14/audio_5c6bb3a5b2.mp3"></audio><!-- Floating romantic texts --><script>
+  
+const romanticTexts=[
+  
+  "I love you 💖",
+  
+  "Forever 💞",
+  
+  "You & Me 💑",
+  
+  "Always 💕",
+  
+  "Mine 😘",
+  
+  "Soulmate 💘",
+  
+  "My heart 💓",
+  
+  "Only you 💗",
+  
+  "Us always 🫶",
+  
+  "True love 💝",
+  
+  "Endless ♾️💖",
+  
+  "With you 🌹",
+  
+  "All mine 😍",
+  
+  "My forever 💫",
+  
+  "Stay 💕",
+  
+  "Love you ❤️",
+  
+  "Still us 💗",
+  
+  "You ❤️",
+  
+  "My person 💞",
+  
+  "Together 💑",
+  
+  "One love 💖",
+  
+  "Heartbeats 💓",
+  
+  "Always you 💕",
+  
+  "Sweet us 🍯💞",
+  
+  "Hold me 🫶",
+  
+  "Never leave 💘",
+  
+  "My world 🌍💖",
+  
+  "Yours 😘",
+  
+  "Us 💑",
+  
+  "Pure love 💝",
+  
+  "Love vibes 💗✨",
+  
+  "Forevermore ♾️",
+  
+  "Soft love 💕",
+  
+  "You + Me 💖",
+  
+  "My soul 💫",
+  
+  "Safe with you 🫶",
+  
+  "Heart eyes 😍",
+  
+  "Love loop ♾️💞",
+  
+  "Kisses 💋",
+  
+  "Moon love 🌙💖",
+  
+  "Always ours 💕",
+  
+  "My joy 🌸💗",
+  
+  "Deep love 💘",
+  
+  "Chosen ❤️",
+  
+  "Lucky us 🍀💖",
+  
+  "Sweetheart 💝",
+  
+  "My calm 🌊💞",
+  
+  "Love struck 💘",
+  
+  "Together always ♾️",
+  
+  "Warm hearts ❤️‍🔥",
+  
+  "Hug me 🫂💖",
+  
+  "Love grows 🌹",
+  
+  "Just us 💑",
+  
+  "My peace 🕊️💗",
+  
+  "Crazy for you 😍",
+  
+  "Soft kisses 💋💞",
+  
+  "Two hearts 💕",
+  
+  "You stay 💖",
+  
+  "Us forever ♾️",
+  
+  "My sunshine ☀️💘",
+  
+  "Love wins 💝",
+  
+  "Connected 💫",
+  
+  "All yours 😘",
+  
+  "My one ❤️",
+  
+  "Sweet love 🍬💖",
+  
+  "Endless us ♾️💑",
+  
+  "Heart full 💓",
+  
+  "With love 💞",
+  
+  "My favorite 💗",
+  
+  "Togetherness 💕",
+  
+  "Always close 🫶",
+  
+  "Deeply ❤️",
+  
+  "In love 💘",
+  
+  "You matter 💖",
+  
+  "Love glow ✨💞",
+  
+  "My everything 💝",
+  
+  "Just you 💗",
+  
+  "Forever vibes ♾️",
+  
+  "Soft hearts 💕",
+  
+  "You & I 💑",
+  
+  "Love story 📖💖",
+  
+  "Chosen hearts 💘",
+  
+  "Always here ❤️",
+  
+  "Sweet us 💞",
+  
+  "Endless love ♾️💖",
+  
+  "❤️ ❤️ ❤️",
+  
+  "💖 💖 💖",
+  
+  "💞 💞",
+  
+  "💑 💑",
+  
+  "🌹 🌹",
+  
+  "💐 💐"
+  
+];
+  
+
+  
+for(let i=0;i<35;i++){
+  
+  const d=document.createElement("div");
+  
+  d.className="love";
+  
+  d.innerText=romanticTexts[Math.floor(Math.random()*romanticTexts.length)];
+  
+  d.style.left=Math.random()*100+"vw";
+  
+  d.style.animationDuration=(14+Math.random()*10)+"s";
+  
+  document.body.appendChild(d);
+  
+}
+  
+
+  
+</script><script>
+  
+/* 🐱 Mochi Cat Stickers */
+  
+const mochiStickers = [
+  
+  "https://s3.getstickerpack.com/storage/uploads/sticker-pack/mochi-catyoume/sticker_3.gif?998eeaa1122243fbd34c6159010f5cec&d=200x200",
+  
+  "https://s3.getstickerpack.com/storage/uploads/sticker-pack/mochi-catyoume/sticker_7.gif?998eeaa1122243fbd34c6159010f5cec&d=200x200",
+  
+  "https://s3.getstickerpack.com/storage/uploads/sticker-pack/mochi-catyoume/sticker_12.gif?998eeaa1122243fbd34c6159010f5cec&d=200x200",
+  
+  "https://s3.getstickerpack.com/storage/uploads/sticker-pack/mochi-catyoume/sticker_18.gif?998eeaa1122243fbd34c6159010f5cec&d=200x200",
+  
+  "https://s3.getstickerpack.com/storage/uploads/sticker-pack/mochi-catyoume/sticker_27.gif?998eeaa1122243fbd34c6159010f5cec&d=200x200",
+  
+  "https://s3.getstickerpack.com/storage/uploads/sticker-pack/mochi-catyoume/sticker_1.gif?998eeaa1122243fbd34c6159010f5cec&d=200x200",
+  
+  "https://s3.getstickerpack.com/storage/uploads/sticker-pack/mochi-catyoume/sticker_6.gif?998eeaa1122243fbd34c6159010f5cec&d=200x200",
+  
+  "https://s3.getstickerpack.com/storage/uploads/sticker-pack/mochi-catyoume/sticker_8.gif?998eeaa1122243fbd34c6159010f5cec&d=200x200"
+  
+];
+  
+
+  
+let mochiElements = [];
+  
+
+  
+for(let i=0;i<12;i++){
+  
+  const img = document.createElement("img");
+  
+  img.src = mochiStickers[Math.floor(Math.random()*mochiStickers.length)];
+  
+  img.className = "mochi";
+  
+  img.style.left = Math.random()*100 + "vw";
+  
+  img.style.animationDuration = (18 + Math.random()*12) + "s";
+  
+  img.style.width = (55 + Math.random()*25) + "px";
+  
+  document.body.appendChild(img);
+  
+  mochiElements.push(img);
+  
+}
+  
+</script><div class="card"><!-- START --><div id="start">  <h1>Create Valentine 💘</h1>  <input id="partnerInput" placeholder="Partner Name 💖"><button onclick="startLove()">Create & Share 💌</button>
+
+</div><!-- QUIZ --><div id="quiz" class="hidden">  <h2 id="question"></h2>  <!-- 🎵 Music hint -->  <p style="font-size:13px;color:#777;margin-bottom:8px;">  </p><button class="option" onclick="answer(4)">Absolutely Yes 💖</button>
+
+<button class="option" onclick="answer(1)">Maybe / Sometimes 😊</button>
+
+<button class="option" onclick="answer(-1)">Not really 😐</button>
+
+<button class="option" onclick="answer(-3)">No ❌</button>
+
+</div><!-- PROPOSAL --><div id="proposal" class="hidden">  <h1 id="proposalText"></h1>  <p>You already have my heart 💖</p>  <div class="buttons"><button id="yes" onclick="accept()">YES 💕</button>
+
+<button id="no">No 🙄</button>
+
+  </div></div><!-- ACCEPTED --><div id="accepted" class="hidden">  <h1>💘 IT'S A YES 💘</h1>  <p>I love you endlessly 😘💞</p><!-- 💌 Romantic Envelope with Heart Seal --><div id="envelope" onclick="openEnvelope()">  <div class="env-back"></div>  <div class="env-front"></div>  <div class="heart-seal"><span>Touch</span>
+
+  </div></div><div id="loveLetter"style="
+
+ margin-top:20px;
+
+ white-space: pre-line;
+
+ text-align:center;
+
+ font-size:18px;
+
+ line-height:1.8;
+
+ color:#444;
+
+ font-family:'Great Vibes', cursive;
+
+ ">
+
+  <h2 style="text-align:center; color:#ff4d6d;">💌 A Letter From My Heart 💌</h2>  <p id="letterText"></p></div></div><script>
+  
+/* 25 Romantic Questions */
+  
+const romanticQuestions=[
+  
+ "do you remember our first meeting?",
+  
+ "did your heart beat faster when you first saw me?",
+  
+ "do you secretly smile when you see my name?",
+  
+ "have I ever appeared in your dreams?",
+  
+ "do you miss me when we don’t talk?",
+  
+ "do you feel calm when you talk to me?",
+  
+ "have you reread our chats and smiled?",
+  
+ "do you feel butterflies when I tease you?",
+  
+ "can you imagine holding my hand right now?",
+  
+ "do you like hearing my voice?",
+  
+ "do I make you laugh on bad days?",
+  
+ "do you feel closer to me than before?",
+  
+ "do you think about me before sleeping?",
+  
+ "would you choose me again if we met today?",
+  
+ "do you feel safe sharing your thoughts with me?",
+  
+ "do you enjoy our late night conversations?",
+  
+ "do you feel special when I say your name?",
+  
+ "can you imagine a future with me?",
+  
+ "do you feel loved by me?",
+  
+ "would you go on a cute date with me?",
+  
+ "do you miss me more at night?",
+  
+ "do you like when I flirt with you?",
+  
+ "do you feel warmth when I say I care?",
+  
+ "do you feel connected to me deeply?",
+  
+ "will you stay with me always?"
+  
+];
+  
+
+  
+const params=new URLSearchParams(window.location.search);
+  
+let partner=params.get("p");
+  
+let index=0;
+  
+let score=0;
+  
+
+  
+/* Start quiz from shared link */
+  
+if(partner){
+  
+  start.classList.add("hidden");
+  
+  quiz.classList.remove("hidden");
+  
+  showQuestion();
+  
+}
+  
+
+  
+/* Create shareable link */
+  
+function startLove(){
+  
+  const p=partnerInput.value.trim().replace(/[^a-zA-Z ]/g, "");
+  
+  if(!p){alert("Enter partner name 💔");return;}
+  
+  window.location.href=`?p=${encodeURIComponent(p)}`;
+  
+}
+  
+
+  
+/* Show question */
+  
+function showQuestion(){
+  
+  question.innerText=`${partner} 💖, ${romanticQuestions[index]} 🌹`;
+  
+}
+  
+
+  
+/* Answer handler */
+  
+function answer(points){
+  
+  if(index >= romanticQuestions.length) return;
+  
+  score += points;
+  
+
+  
+  if(index===0){
+  
+    music.play().catch(()=>{
+  
+      console.log("Music autoplay blocked");
+  
+    });
+  
+  }
+  
+
+  
+  index++;
+  
+  if(index < romanticQuestions.length){
+  
+    showQuestion();
+  
+  }else{
+  
+    quiz.classList.add("hidden");
+  
+    proposal.classList.remove("hidden");
+  
+    proposalText.innerText=`${partner} 💞, will you be my Valentine? 💘`;
+  
+  }
+  
+}
+  
+
+  
+/* 🔁 CHAOTIC NO BUTTON — 1000+ variations */
+  
+const noBaseTexts = [
+  
+  "Nice try 😏","You can’t escape 💘","Running away 🏃‍♀️💨",
+  
+  "Say YES already 😌","I know you love me 💖","Too late 😈",
+  
+  "Caught you 😜","Almost clicked YES 😅","Heart says YES ❤️",
+  
+  "Resistance is useless 😈","Why so shy 😘","Try again 😏",
+  
+  "Destiny says YES 💘","Be honest now 😌","Nope 🙃",
+  
+  "You’re blushing 😳","I saw that smile 😁","Love detected 💖"
+  
+  
+  
+];
+  
+
+  
+function getRandomNoText(){
+  
+  const emojis = ["❤️","💖","💘","😏","😈","🥰","🌹","💞","😘","😉"];
+  
+  return (
+  
+    noBaseTexts[Math.floor(Math.random()*noBaseTexts.length)]
+  
+    + " " +
+  
+    emojis[Math.floor(Math.random()*emojis.length)]
+  
+  );
+  
+}
+  
+
+  
+/* BIGGER JUMPS + ROTATION */
+  
+no.addEventListener("mouseover",()=>{
+  
+  const maxX = window.innerWidth / 2 - 100;
+  
+  const maxY = window.innerHeight / 2 - 100;
+  
+
+  
+  const x = Math.random() * maxX * 2 - maxX;
+  
+  const y = Math.random() * maxY * 2 - maxY;
+  
+  const r = Math.random()*20 - 10;
+  
+
+  
+  no.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
+  
+  no.innerText = getRandomNoText();
+  
+});
+  
+
+  
+
+  
+/* Accept + Final score */
+  
+function accept(){
+  
+  if(document.getElementById("bar")) return;
+  
+
+  
+  proposal.classList.add("hidden");
+  
+  accepted.classList.remove("hidden");
+  
+
+  
+  const maxScore = romanticQuestions.length * 4;
+  
+  const minScore = romanticQuestions.length * -3;
+  
+
+  
+  const normalized = (score - minScore) / (maxScore - minScore);
+  
+  const percent = Math.round(normalized * 100);
+  
+
+  
+  let message="";
+  
+  if(percent >= 85) message="💘 Soulmates energy detected!";
+  
+  else if(percent >= 70) message="💞 Strong romantic connection!";
+  
+  else if(percent >= 55) message="💕 Love is growing nicely!";
+  
+  else if(percent >= 40) message="😅 Needs more cute dates!";
+  
+  else message="😈 Playing hard to get, huh?";
+  
+
+  
+ document.getElementById("loveLetter").insertAdjacentHTML(
+  
+  "beforebegin",
+  
+  `
+  
+  <h2>Compatibility: ${percent}% 💯</h2>
+  
+  <div style="width:100%;background:#f1f1f1;border-radius:20px;overflow:hidden;margin:10px 0;">
+  
+    <div id="bar"
+  
+         style="height:18px;width:0%;
+  
+         background:linear-gradient(90deg,#ff4d6d,#ff7eb3);
+  
+         border-radius:20px;
+  
+         transition:width 2s;"></div>
+  
+  </div>
+  
+  <p>${message}</p>
+  
+  `
+  
+);
+  
+
+  
+setTimeout(()=>{
+  
+  document.getElementById("bar").style.width = percent + "%";
+  
+},100);
+  
+
+  
+
+  
+}
+  
+
+  
+/* 💌 Deep Romantic Love Letter (Proper Line Breaks) */
+  
+function getLoveLetter(name){
+  
+  return `
+  
+My love ${name},
+  
+
+  
+If I could pause time at one moment in my life, it would be every moment
+  
+I’ve felt you without even touching you. Because loving you isn’t something
+  
+I do with my hands — it’s something my soul learned naturally,
+  
+as if it always knew you were coming.
+  
+
+  
+Before you, days passed.
+  
+After you, days began to mean something.
+  
+
+  
+You didn’t arrive like a storm.
+  
+You arrived like warmth — slow, gentle, undeniable.
+  
+You settled into my heart so quietly that I never noticed
+  
+the exact moment you became essential.
+  
+I only knew that suddenly, everything made sense
+  
+because you existed in it.
+  
+
+  
+I love the way you live in my thoughts
+  
+when I’m not trying to think.
+  
+I love the comfort of your presence,
+  
+even from afar.
+  
+I love how your name feels like home
+  
+when the world feels loud.
+  
+
+  
+With you, I don’t feel the need to pretend,
+  
+to impress, or to hide.
+  
+I feel seen.
+  
+Not just looked at —
+  
+but understood.
+  
+
+  
+You are the softness I didn’t know I needed
+  
+and the strength I didn’t know I was allowed to lean on.
+  
+You turn ordinary moments into memories
+  
+and silence into something beautiful.
+  
+
+  
+When I imagine a future,
+  
+it doesn’t shine because it’s perfect.
+  
+It shines because you’re there.
+  
+
+  
+If love were a language,
+  
+my heart learned it in your accent.
+  
+If love were a place,
+  
+I would find you in every lifetime.
+  
+If love were a choice —
+  
+I would choose you again and again,
+  
+even on the days when loving is hard.
+  
+
+  
+I don’t promise perfection.
+  
+I promise presence.
+  
+I promise effort.
+  
+I promise honesty, patience,
+  
+and a heart that keeps choosing you
+  
+even when words fall short.
+  
+
+  
+And if one day you ever forget
+  
+how deeply you are loved,
+  
+let this be your reminder:
+  
+
+  
+There is a heart that beats differently because of you.
+  
+There is a soul that feels fuller because you exist.
+  
+There is a love here —
+  
+steady, sincere, and endlessly yours.
+  
+
+  
+Always you.
+  
+In every version of my tomorrow.
+  
+With all that I am. ❤️
+  
+`;
+  
+}
+  
+
+  
+
+  
+/* ✨ Typewriter Effect */
+  
+function typeWriter(text, elementId, speed=35){
+  
+  let i = 0;
+  
+  const el = document.getElementById(elementId);
+  
+  el.innerHTML = "";
+  
+
+  
+  function typing(){
+  
+    if(i < text.length){
+  
+      el.innerHTML += text.charAt(i);
+  
+      i++;
+  
+      setTimeout(typing, speed);
+  
+    }
+  
+  }
+  
+  typing();
+  
+}
+  
+
+  
+function openEnvelope(){
+  
+  const env = document.getElementById("envelope");
+  
+  env.classList.add("open");
+  
+
+  
+  /* 🐱 Mochi reacts */
+  
+  mochiElements.forEach(m => {
+  
+    m.style.transform += " scale(1.2)";
+  
+  });
+  
+
+  
+  /* 💖 Heart rain */
+  
+  mochiHeartRain();
+  
+
+  
+  setTimeout(()=>{
+  
+    /* Fade mochi away */
+  
+    mochiElements.forEach(m => m.classList.add("fade"));
+  
+
+  
+    env.style.display="none";
+  
+    document.getElementById("loveLetter").style.display="block";
+  
+
+  
+    const letter = getLoveLetter(partner);
+  
+    typeWriter(letter, "letterText", 35);
+  
+  },1200);
+  
+}
+  
+
+  
+
+  
+function mochiHeartRain(){
+  
+  const hearts = ["💖","💘","💕","💞","❤️"];
+  
+  for(let i=0;i<25;i++){
+  
+    const h = document.createElement("div");
+  
+    h.className = "mochi-heart";
+  
+    h.innerText = hearts[Math.floor(Math.random()*hearts.length)];
+  
+    h.style.left = Math.random()*100 + "vw";
+  
+    h.style.animationDuration = (3 + Math.random()*2) + "s";
+  
+    document.body.appendChild(h);
+  
+
+  
+    setTimeout(()=>h.remove(),5000);
+  
+  }
+  
+}
+  
+
+  
+
+  
+</script></body></html>
